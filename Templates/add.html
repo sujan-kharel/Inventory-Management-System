@@ -1,0 +1,38 @@
+{%extends "index.html" %}
+
+{% block body %}
+
+{{errMessage}}
+
+<div id = "add-form">
+    <form action="/insert" method="post">
+        <div id = "name">
+            <label>Product Name: <input autocomplete="off"
+                                    name="name" placeholder="Name" type="text" required></label>
+        </div>
+        <div id = "upc"><label>UPC: <input autocomplete="off"
+                                           name="upc" placeholder="Barcode" type="number" min=0 required> </label>
+        </div>
+        <div id = "retail"><label>Retail($): <input autocomplete="off" name="price" step= ".01"
+                                 placeholder="Price" type="number" min=0 required> </label>
+        </div>
+        <div id = "quantity"><label>Quantity: <input autocomplete="off" name="quantity" placeholder="Quantity"
+                               type="number" min=0 required> </label>
+        </div>
+        <div id = "department">
+            <select name="department" required>
+            <option disabled selected value = "">department</option>
+            <option value="grocery">Grocery</option>
+            <option value="frozen">Frozen</option>
+            <option value="deli">Deli</option>
+            <option value="produce">Produce</option>
+            <option value="wine">Wine</option>
+        </select>
+        </div>
+        <input name="submit" type="submit">
+
+    </form>
+</div>
+
+
+{% endblock %}

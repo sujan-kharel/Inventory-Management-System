@@ -1,0 +1,55 @@
+{% extends "index.html" %}
+<!-- formatted in upc: (name, invoice_price, retail_price, department) -->
+
+host_inv
+
+{% block body %}
+
+<form action ="/order" method="post">
+<table id = "host">
+    <tr>
+        <th>UPC</th>
+        <th>Name</th>
+        <th>Invoice Price</th>
+        <th>Retail Price</th>
+        <th>Department</th>
+        <th>Order (by quantity) </th>
+    </tr>
+
+
+    {% for item in host_inv %}
+    <tr>
+        <td name="upc">{{item}}</td>
+        <input type="hidden" name="upc" value="{{ item }}" />
+        <td name="name">{{host_inv[item][0]}}</td>
+        <input type="hidden" name="name" value="{{host_inv[item][0]}}" />
+        <td >{{host_inv[item][1]}}</td>
+
+        <td name="price">{{host_inv[item][2]}}</td>
+        <input type="hidden" name="price" value="{{host_inv[item][2]}}" />
+
+        <td name="department">{{host_inv[item][3]}}</td>
+        <input type="hidden" name="department" value="{{host_inv[item][3]}}" />
+        <td>
+            <input autocomplete="off" name="quantity" min=0 placeholder="Quantity"
+                               type="number" >
+        </td>
+    </tr>
+    {% endfor %}
+    </table>
+
+
+
+
+        <button type="submit" name="order" value="order">Submit Order</button>
+    </form>
+
+
+
+
+
+
+
+
+
+{% endblock %}

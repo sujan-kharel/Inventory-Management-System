@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div id="main-menu">
+<h1> Main Menu </h1>
+    <div class = "main-menu">
+
+        <form action="/requestPage" method="Post">
+
+            <button type="submit" name="order" value="order">Order</button>
+
+            <button type="submit" name="add" value="add">Add</button>
+            <button type="submit" name="viewInventory" value="viewInventory">View Inventory</button>
+        </form>
+    </div>
+</div>
+    {% block body %} {% endblock %}
+</body>
+</html>

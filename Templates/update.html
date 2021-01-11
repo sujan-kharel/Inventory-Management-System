@@ -1,0 +1,49 @@
+{%extends "index.html" %}
+
+{% block body %}
+
+<form action="/add/subtract/remove" method="post">
+    <div id="update-description">
+    <h2>Item Description: </h2>
+    <d1>
+            <dt><h3>Item Name : {{itemObject.name}}</h3></dt>
+            <dd><h5>- Barcode : {{itemObject.upc}}</h5></dd>
+            <dd><h5>- Price : {{itemObject.price}}</h5></dd>
+            <dd><h5>- Quantity Available : {{itemObject.quantity}}</h5></dd>
+            <dd><h5>- Department : {{itemObject.department}}</h5></dd>
+    </d1>
+    </div>
+
+    <div id="update-item">
+       <p>Do you want to ADD or SUBTRACT quantity?</p>
+        <input name="update-action" id="add" value="put" type="radio" required>
+        <label for="add">PUT</label><br><br>
+        <input name="update-action" id="subtract" value="pull" type="radio" required>
+        <label for="subtract">PULL</label><br>
+
+        <p>By how may quantity do you want to ADD or SUBTRACT? </p>
+        <input autocomplete="off" name="quantity" placeholder="Quantity"
+                               type="number" min=0 max="999" ><br><br>
+
+        <input type="hidden" name="upc" value={{itemObject.upc}}>
+        <input name="update-action" id="remove" value="remove" type="radio" required>
+        <label for="remove">Remove</label><br><br>
+        <input type="submit" value="Submit">
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+</form>
+
+
+
+
+{% endblock %}
