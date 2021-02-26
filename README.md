@@ -1,4 +1,4 @@
-# Inventory Management System using CRUD application with SQLite database
+# [Inventory Management System using CRUD application with SQLite database](https://inventory-management-sy.herokuapp.com/)
 
 **A working demo of inventory system for retail store**
 # What's in it
